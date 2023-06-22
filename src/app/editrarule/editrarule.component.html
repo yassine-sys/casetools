@@ -1,0 +1,51 @@
+<div mat-dialog-content>
+    
+    <form [formGroup]="raruleForm">
+      <mat-form-field>
+        <input matInput formControlName="nom" placeholder="nom" required>
+        <mat-error *ngIf="raruleForm.get('nom')?.invalid">
+            nom is required
+        </mat-error>
+      </mat-form-field>
+   
+
+  
+    <mat-form-field>
+      <input matInput formControlName="description" placeholder="description" required>
+      <mat-error *ngIf="raruleForm.get('description')?.invalid">
+          nom is required
+      </mat-error>
+    </mat-form-field>
+ 
+
+
+
+    <mat-form-field>
+      <input matInput formControlName="type" placeholder="type" required>
+      <mat-error *ngIf="raruleForm.get('type')?.invalid">
+          nom is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Domain:</mat-label>
+        <mat-select id="idDomain" formControlName="idDomain" required>
+            <mat-option *ngFor="let element of domain" [value]="element.id">{{ element.domain }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Revenue:</mat-label>
+        <mat-select id="idrevenue" formControlName="idrevenue" required>
+            <mat-option *ngFor="let element of revenue" [value]="element.id">{{ element.revenuestream }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+  
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Discard</button>
+    <button mat-button color="primary" (click)="onSubmit()">Confirm</button>
+   
+  </div>
+  

@@ -1,0 +1,45 @@
+<div mat-dialog-content>
+    
+    <form [formGroup]="paramForm">
+     
+   
+
+  
+        <mat-form-field appearance="fill">
+            <mat-label>Fonction:</mat-label>
+            <mat-select id="fonction" formControlName="fonction" required>
+                <mat-option *ngFor="let element of fct" [value]="element">{{ element }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+ 
+
+
+
+        <div>
+            <button mat-button (click)="decrement()">-</button>
+            <span>{{ paramForm.get('seuil')?.value }}</span>
+            <button mat-button (click)="increment()">+</button>
+          </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Parametre:</mat-label>
+        <mat-select id="idParametre" formControlName="idParametre" required>
+            <mat-option *ngFor="let element of param" [value]="element.idParametre">{{ element.nameparametre }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Rule:</mat-label>
+        <mat-select id="idRule" formControlName="idRule" required>
+            <mat-option *ngFor="let element of rule" [value]="element.id">{{ element.nom }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+  
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Discard</button>
+    <button mat-button color="primary" (click)="onSubmit()">Confirm</button>
+   
+  </div>
+  

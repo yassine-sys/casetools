@@ -1,0 +1,42 @@
+<div>
+    <h2>Users</h2> <!-- Add the title above the table -->
+    <hr> <!-- Add a horizontal line below the title -->
+  
+  <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Login</th>
+          <th scope="col">Mail</th>
+          <th scope="col">Registration Number</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Created By</th>
+          <th scope="col">State</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of user">
+          <td>{{ u.name  }} </td>
+          <td>{{ u.login  }} </td>
+          <td>{{ u.mail  }} </td>
+          <td>{{ u.matricule  }} </td>
+          <td>{{ u.createdDate  }} </td>
+          <td>{{ u.createdBy  }} </td>
+          <td>{{ u.etat  }} </td>
+          <td style="text-align: right;">
+            <button style="float: right;" (click)="performDeleteUser(u)" class="btn btn-danger" title="Supprimer">
+            <i class="ui-icon ui-icon-trash"></i>
+            delete
+          </button>
+          <button style="float: right; margin-right: 10px;" (click)="openUpdateModal(u)" class="btn btn-success" title="Edit">
+            <i class="ui-icon ui-icon-edit"></i>
+            edit
+          </button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+
+  <button class="btn btn-primary" (click)="openModal()">Add</button>

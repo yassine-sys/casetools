@@ -1,0 +1,57 @@
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Name" required>
+        <mat-error *ngIf="userForm.get('name')?.invalid">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      
+        <mat-form-field>
+          <input matInput formControlName="login" placeholder="Login" required>
+          <mat-error *ngIf="userForm.get('login')?.invalid">
+            Login is required
+          </mat-error>
+        </mat-form-field>
+
+        
+            <mat-form-field>
+              <input matInput formControlName="mail" placeholder="Mail" required>
+              <mat-error *ngIf="userForm.get('mail')?.invalid">
+                Mail is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput formControlName="password" placeholder="Password" type="password" required>
+                <mat-error *ngIf="userForm.get('password')?.invalid">
+                    Password is required
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput formControlName="matricule" placeholder="Matricule" required>
+                <mat-error *ngIf="userForm.get('matricule')?.invalid">
+                    Matricule is required
+                </mat-error>
+              </mat-form-field>
+  
+      <mat-checkbox formControlName="domaineControl" (change)="onCheckboxChange($event, 'domaineControl')">Domaine Control</mat-checkbox>
+      <mat-checkbox formControlName="revunueStream" (change)="onCheckboxChange($event, 'revunueStream')">Revenue Stream</mat-checkbox>
+      <mat-checkbox formControlName="adminAdd" (change)="onCheckboxChange($event, 'adminAdd')">adminAdd</mat-checkbox>
+      <mat-checkbox formControlName="raRule" (change)="onCheckboxChange($event, 'raRule')">raRule</mat-checkbox>
+      <mat-checkbox formControlName="stat" (change)="onCheckboxChange($event, 'stat')">stat</mat-checkbox>
+      <mat-checkbox formControlName="assignedTo" (change)="onCheckboxChange($event, 'assignedTo')">assignedTo</mat-checkbox>
+      <mat-checkbox formControlName="reAssignedTo" (change)="onCheckboxChange($event, 'reAssignedTo')">reAssignedTo</mat-checkbox>
+      <mat-checkbox formControlName="closed" (change)="onCheckboxChange($event, 'closed')">closed</mat-checkbox>
+
+      <!-- Add more checkboxes for other fields if needed -->
+    </form>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onDiscard()">Discard</button>
+    <button mat-button color="primary" (click)="onSubmit()">Confirm</button>
+  </div>
+  

@@ -1,0 +1,32 @@
+<div>
+  <h2>Domain Control</h2> <!-- Add the title above the table -->
+  <hr> <!-- Add a horizontal line below the title -->
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        
+        <th scope="col">Domain Control</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dom of domaincontrol">
+        <td>{{ dom.domain  }}</td>
+        <td style="text-align: right;">
+          <button style="float: right;" (click)="performDeleteDomain(dom)" class="btn btn-danger" title="Supprimer">
+          <i class="ui-icon ui-icon-trash"></i>
+          delete
+        </button>
+        <button style="float: right; margin-right: 10px;" (click)="openUpdateModal(dom)" class="btn btn-success" title="Edit">
+          <i class="ui-icon ui-icon-edit"></i>
+          edit
+        </button>
+      </td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+ 
+</div>
+<button class="btn btn-primary" (click)="openModal()">Add</button>

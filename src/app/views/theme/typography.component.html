@@ -1,0 +1,34 @@
+<!-- <table _ngcontent-ng-c254598208="" ctable="" color="dark" ng-reflect-color="dark" ng-reflect-striped="true" class="table table-dark table-striped">
+  <thead _ngcontent-ng-c254598208="">
+  <tr _ngcontent-ng-c254598208="">
+    
+    <th _ngcontent-ng-c254598208="" scope="col">Revenue Stream    </th>
+  </tr>
+  </thead>
+  <tbody _ngcontent-ng-c254598208="">
+  <tr _ngcontent-ng-c254598208="">
+    <td _ngcontent-ng-c254598208="">Mark</td>
+   
+  </tr>
+ 
+  </tbody>
+</table> -->
+
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Revenue Stream</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let revenue of revenuestream">
+      <td>{{ revenue.revenuestream  }} {{revenue.id}}</td>
+      <td style="text-align: right;"><button style="float: right;" (click)="performDeleteRevenue(revenue)" class="btn btn-danger" title="Supprimer">
+        <i class="ui-icon ui-icon-trash"></i>
+        delete
+      </button></td>
+    </tr>
+  </tbody>
+</table>
