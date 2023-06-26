@@ -1,0 +1,22 @@
+
+<div mat-dialog-content>
+  <p>Date Detection: {{ data.dateDetection }}</p>
+  <p>Date Appel: {{ data.dateappel }}</p>
+  <p>Etat: {{ data.etat }}</p>
+  <p>Rule: {{ data.idRule }}</p>
+  <p>Description Rule: {{ data.namerule }}</p>
+  <p>Seuil: {{ data.seuil }}</p>
+  <p>Function: {{ data.function }}</p>
+  <p>Valeur: {{ data.valeur }}</p>
+  <p>Valeur: {{ data.status }}</p>
+</div>
+
+<div mat-dialog-content>
+    <mat-label for="users">Select User:</mat-label>
+    <mat-select id="users" [(ngModel)]="selectedUser" name="users">
+      <mat-option *ngFor="let user of users" [value]="user.id">{{ user.name }}</mat-option>
+    </mat-select>
+  </div>
+  
+<button mat-button (click)="closeDialog()">Close</button>
+<button mat-button (click)="assignUserToAlert()">Assign</button>

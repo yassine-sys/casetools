@@ -11,6 +11,8 @@ import { UsermanagementComponent } from './usermanagement/usermanagement.compone
 import { DomaincontrolComponent } from './domaincontrol/domaincontrol.component';
 import { RaruleComponent } from './rarule/rarule.component';
 import { RevenuestreamComponent } from './revenuestream/revenuestream.component';
+import { AlertComponent } from '@coreui/angular';
+import { AlerteComponent } from './alerte/alerte.component';
 
 const routes: Routes = [
  {
@@ -33,8 +35,8 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'accueil',
-       component:AccueilComponent
+        path: 'alerte',
+       component:AlerteComponent
       },
       {
         path: 'usermanagement',

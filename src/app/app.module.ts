@@ -65,6 +65,12 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { EditraruleComponent } from './editrarule/editrarule.component';
 import { EditparamComponent } from './editparam/editparam.component';
 import { EditreportComponent } from './editreport/editreport.component';
+import { AlerteComponent } from './alerte/alerte.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { RowDetailsDialogComponent } from './row-details-dialog/row-details-dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -73,7 +79,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, AccueilComponent, UsermanagementComponent, DomaincontrolComponent, RevenuestreamComponent, RaruleComponent, AdddomainComponent, AddrevenueComponent, AdduserComponent, AddraruleComponent, AddparamComponent, AddrapportComponent, EditrevenueComponent, EditdomComponent, EdituserComponent, EditraruleComponent, EditparamComponent, EditreportComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, AccueilComponent, UsermanagementComponent, DomaincontrolComponent, RevenuestreamComponent, RaruleComponent, AdddomainComponent, AddrevenueComponent, AdduserComponent, AddraruleComponent, AddparamComponent, AddrapportComponent, EditrevenueComponent, EditdomComponent, EdituserComponent, EditraruleComponent, EditparamComponent, EditreportComponent, AlerteComponent, RowDetailsDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -109,7 +115,9 @@ const APP_CONTAINERS = [
     ModalModule,
     MatIconModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule,
+    MatSnackBarModule
 
     
   ],

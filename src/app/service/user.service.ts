@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private baseUrl ='http://10.82.11.8:8080/CaseTools/rest/case'
+  private baseUrl ='http://127.0.0.1:8080/CaseTools-0.0.1-SNAPSHOT/rest/case'
 
 
   constructor(private http: HttpClient) { }
@@ -30,6 +30,10 @@ export class UserService {
 
   public editUser(id:any,user:any){
     return this.http.put(`${this.baseUrl}/edituser/${id}`,user);
+  }
+
+  assignAlertUser(alerts:any){
+    return this.http.post(`${this.baseUrl}/assignAlertUser`,alerts);
   }
 
 
